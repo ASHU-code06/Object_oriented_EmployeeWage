@@ -3,9 +3,6 @@ import java.util.Random;
 public class EmployeeWageComputation {
         public static void main(String[] args){
 
-            int wageperhour = 20;
-            int fulltimehours = 8;
-            int parttimehours = 4;
             int r;
             Random ran = new Random();
             r = ran.nextInt(2);
@@ -13,26 +10,28 @@ public class EmployeeWageComputation {
             if (r == 0) {
                 System.out.println("Employee is absent");
             }
-            if (r == 1) {
+
+            if (r == 1)
+            {
                 System.out.println("Employee is present");
 
-                Scanner myinput = new Scanner(System.in);
-            System.out.println("Enter 1 for fulltimewage else Enter 2 for partimewage calculation");
-            int data = myinput.nextInt();
-            switch(data){
-                case 1:
-                    int dailywage;
-                    dailywage = wageperhour * fulltimehours;
-                    System.out.println("daily wage of fulltime working Employee is " + dailywage);
-                    break;
-                case 2:
-                    int partimewage;
-                    partimewage= wageperhour * parttimehours;
-                    System.out.println("Daily wage of partime working Employee is " + partimewage);
-                    break;
-                default:
-                    System.out.println("hi");
-                }
+                int wageperhour = 20;
+                int fulltimehours = 8;
+                int parttimehours = 4;
+                int wageperday= wageperhour * fulltimehours;
+                int wageperdayp = wageperhour * parttimehours;
+                System.out.println("daily wage of fulltime working Employee is " +wageperday);
+                int monthlyworkingdays = 20 ;
+                int monthlywage;
+                monthlywage= monthlyworkingdays * wageperday;
+                System.out.println("monthlywage of Employee is  " + monthlywage);
+                /*suppose employee worked
+                 16 days fulltime
+                 and 4 days parttime
+                 in a month of 20 working days
+                 monthlywage= 16 * wageperday + 4 * wageperdayp
+                 */
+
             }
 
         }
