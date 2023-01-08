@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Company {
     private String companyName;
     private int partTimeHours;
@@ -27,6 +29,18 @@ public class Company {
     }
     public int getMonthlyWorkingDays() {
         return monthlyWorkingDays;
+    }
+
+
+    public static Company empWageBuilder(){
+
+        System.out.println("Enter name of company");
+        String companyName=(new Scanner(System.in)).nextLine();
+
+        System.out.println("Enter wager per hour of "+companyName);
+        int wagePerHour=(new Scanner(System.in)).nextInt();
+        return new Company(companyName,4,8,wagePerHour,20);
+
     }
 
 }
